@@ -26,3 +26,4 @@ Route::get('/get-all-new-products','Api\ProductController@getAllNewProducts');
 Route::get('/get-products-by-category/{categoryId}','Api\ProductController@getProductsByCategoryId');
 Route::post('/register','Api\UserController@register');
 Route::post('/login','Api\UserController@login');
+Route::post('/shipping','Api\ShippingController@store');
