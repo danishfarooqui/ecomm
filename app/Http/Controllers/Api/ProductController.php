@@ -84,4 +84,20 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function getAllHotProducts(){
+      $hotProducts = Product::where('is_hot_product',1)->get();
+      return ProductResource::collection($hotProducts);
+    }
+
+    public function getAllNewProducts(){
+      $newProducts = Product::where('is_new_arrival',1)->get();
+      return ProductResource::collection($newProducts);
+    }
+
+   public function getProductsByCategoryId($categoryId){
+     $productByCategory = Product::where('category_id',$categoryId)->get();
+     return ProductResource::collection($productByCategory);
+   }
+
 }

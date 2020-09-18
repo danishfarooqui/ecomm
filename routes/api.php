@@ -14,10 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::get('categories','Api\CategoryController@index');
-Route::get('orders','Api\OrderController@index');
-Route::get('sliders','Api\SliderController@index');
-Route::get('products','Api\ProductController@index');
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+Route::get('/categories','Api\CategoryController@index');
+Route::get('/orders','Api\OrderController@index');
+Route::get('/sliders','Api\SliderController@index');
+Route::get('/products','Api\ProductController@index');
+Route::get('/get-all-hot-products','Api\ProductController@getAllHotProducts');
+Route::get('/get-all-new-products','Api\ProductController@getAllNewProducts');
+Route::get('/get-products-by-category/{categoryId}','Api\ProductController@getProductsByCategoryId');
+Route::post('/register','Api\UserController@register');
+Route::post('/login','Api\UserController@login');

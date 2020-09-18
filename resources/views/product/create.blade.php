@@ -34,6 +34,10 @@
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0.0" name="productDiscount">
         </div>
         <div class="form-group">
+            <label for="exampleInputEmail1">Product detail</label>
+            <textarea name="productDetail" id="editor1"></textarea>
+        </div>
+        <div class="form-group">
             <label for="exampleInputEmail1">Product Category</label>
             <select class="form-control" name="category">
                 <option>select</option>
@@ -55,7 +59,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Is New Product</label>
-            <input type="checkbox" name="isNewProduct">
+            <input type="checkbox" name="isNewArrival">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
