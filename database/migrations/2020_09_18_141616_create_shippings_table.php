@@ -19,7 +19,6 @@ class CreateShippingsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('address');
-            $table->id();
             $table->timestamps();
         });
     }
