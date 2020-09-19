@@ -14,14 +14,12 @@ class CreateShippingsTable extends Migration
     public function up()
     {
         Schema::create('shippings', function (Blueprint $table) {
-<<<<<<< HEAD
+
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
             $table->string('address');
-=======
             $table->id();
->>>>>>> a7301bcce3dbff4e872a0fe2ff0b26ba806d663b
             $table->timestamps();
         });
     }
