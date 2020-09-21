@@ -32,27 +32,15 @@ class PaymentController extends Controller
         // Set your secret key. Remember to switch to your live secret key in production!
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 
-
-        return $cartItems = $request->input('cartItems');
         \Stripe\Stripe::setApiKey('sk_test_51HTQxNLvujkiiWhM3qtdjSi9dlCopxS8gGY5HqRn3ZpP5xTeWG5pd8oms60Z4W0ysQm1QKaTDKDiKGi1vurQHYcF00vuYTv19J');
 
-        $token = \Stripe\Token::create([
-            'card' => [
-                'number' => $request->input('cardNumber'),
-                'exp_month' => $request->input('expiryMonth'),
-                'exp_year' => $request->input('expiryYear'),
-                'cvc' => $request->input('cvcNumber')
-            ]
-        ]);
-
-        $charge = \Stripe\Charge::create([
+        \Stripe\PaymentIntent::create([
             'amount' => 1000,
-            'currency' => 'usd',
-            'source' => $token,
-            'receipt_email' => $request->input('email'),
+            'currency' => 'inr',
+            'payment_method_types' => ['card'],
+            'receipt_email' => 'jenny.rosen@example.com',
         ]);
 
-        return $charge;
 
     }
     /**
