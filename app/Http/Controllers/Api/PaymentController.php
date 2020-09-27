@@ -36,7 +36,7 @@ class PaymentController extends Controller
         try {
             $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
-            $totalAmount = 0.0;
+            $totalAmount = 0;
             foreach ($cartItems as $cartItem) {
                 $order = new Order();
                 $order->order_date = Carbon::now()->toDateString();
@@ -62,7 +62,7 @@ class PaymentController extends Controller
             $charge = \Stripe\Charge::create([
                 'amount' => $totalAmount * 100,
                 'currency' => 'inr',
-                'source' => $token->card,
+                'source' => $token,
                 'receipt_email' => $request->input('email'),
             ]);
 
