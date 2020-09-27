@@ -42,7 +42,7 @@ class PaymentController extends Controller
                 $order->order_date = Carbon::now()->toDateString();
                 $order->product_id = $cartItem['productId'];
                 $order->user_id = $request->input('userId');
-                $order->quantity = $cartItem['quantity'];
+                $order->quantity = $cartItem['productQuantity'];
                 $order->amount = $cartItem['productPrice'];
                 $totalAmount += $order->amount * $order->quantity;
                 $order->save();
