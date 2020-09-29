@@ -85,4 +85,8 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function getOrdersById($userId){
+        return Order::where('user_id',$userId)->get();
+    }
 }
