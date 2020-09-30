@@ -87,6 +87,10 @@ class OrderController extends Controller
     }
 
     public function getOrdersById($userId){
-        return Order::where('user_id',$userId)->get();
+        $orders = Order::where('user_id',$userId)->get();
+        foreach ($orders as $order){
+            $order->product;
+        }
+        return $orders;
     }
 }
