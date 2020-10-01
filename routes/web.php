@@ -36,3 +36,4 @@ Route::get('/all-sliders','SliderController@index');
 Route::get('/edit-slider/{id}','SliderController@edit');
 Route::post('/post-slider-edit-form/{id}','SliderController@update');
 Route::get('/delete-slider/{id}','SliderController@destroy');
+Route::get('/all-orders','OrderController@index');

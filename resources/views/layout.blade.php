@@ -101,6 +101,22 @@
                         </nav>
                     </div>
 
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                        Orders
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages2" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+
+                            <a class="nav-link collapsed" href="{{URL::to('all-orders')}}"  data-target="#pagesCollapseAuth" aria-expanded="false" >
+                                All Orders
+                            </a>
+
+                        </nav>
+                    </div>
+
+
                 </div>
             </div>
             <div class="sb-sidenav-footer">
