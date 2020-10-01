@@ -64,7 +64,7 @@
 
     <script>
         function checkDelete() {
-            var check = confirm("Are you sure you want to delete?");
+            var check = confirm("Are you sure you want to cancel?");
             if(check){
                 return true;
             }
