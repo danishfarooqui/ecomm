@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Auth::routes();
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/','DashboardController@index');
@@ -38,5 +39,4 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/delete-slider/{id}','SliderController@destroy');
     Route::get('/all-orders','OrderController@index');
 });
-Auth::routes();
 
