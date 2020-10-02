@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::middleware(['auth'])->group(function (){
-    Route::get('/','DashboardController@index');
+    Route::get('/dashboard','DashboardController@index');
     Route::post('/post-category-form','CategoryController@store');
     Route::get('/create-category','CategoryController@create');
     Route::get('/all-categories','CategoryController@index');
