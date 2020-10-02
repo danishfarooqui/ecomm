@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Auth::routes();
-
-Route::middleware(['auth'])->group(function (){
     Route::get('/dashboard','DashboardController@index');
     Route::post('/post-category-form','CategoryController@store');
     Route::get('/create-category','CategoryController@create');
@@ -39,5 +36,9 @@ Route::middleware(['auth'])->group(function (){
     Route::post('/post-slider-edit-form/{id}','SliderController@update');
     Route::get('/delete-slider/{id}','SliderController@destroy');
     Route::get('/all-orders','OrderController@index');
-});
+
+
+
+Auth::routes();
+
 
