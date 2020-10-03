@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-    Route::get('/dashboard','DashboardController@index');
+    Route::get('/','DashboardController@index');
     Route::post('/post-category-form','CategoryController@store');
     Route::get('/create-category','CategoryController@create');
     Route::get('/all-categories','CategoryController@index');
