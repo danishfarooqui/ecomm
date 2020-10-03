@@ -34,7 +34,7 @@
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="#">Activity Log</a>
                 <div class="dropdown-divider"></div>
-                <form method="post" action="{{route('logout')}}">
+                <form method="post" action="{{ route('logout') }}">
                 <button class="dropdown-item" type="submit">Logout</button>
                 </form>
             </div>
