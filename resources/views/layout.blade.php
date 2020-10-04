@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>My Store</title>
-    <link rel="shortcut icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.clipartmax.com%2Fmiddle%2Fm2i8m2Z5H7Z5G6m2_trolley-clipart-shopping-cart-shopping-cart-icon-png%2F&psig=AOvVaw2tIeYKDHZgA2Py0FSU2Kkp&ust=1601896681802000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiChqvomuwCFQAAAAAdAAAAABAD" type = "image/x-icon"/>
+    <link rel="shortcut icon" href="https://img.icons8.com/carbon-copy/2x/favorite-cart.png" type = "image/x-icon"/>
     <link href="{{URL::to("css/style.css")}}" rel="stylesheet"/>
     <link href="{{URL::to("css/styles.css")}}" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
