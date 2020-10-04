@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>My Store</title>
-    <link rel="shortcut icon" href="https://img.icons8.com/carbon-copy/2x/favorite-cart.png" type = "image/x-icon"/>
+    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/2x/favorite-cart.png" type = "image/x-icon"/>
     <link href="{{URL::to("css/style.css")}}" rel="stylesheet"/>
     <link href="{{URL::to("css/styles.css")}}" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
