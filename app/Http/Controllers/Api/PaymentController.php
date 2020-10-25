@@ -73,7 +73,7 @@ class PaymentController extends Controller
             return response(['result' => true]);
 
         } catch (\Exception $exception) {
-            return response(['result' => $exception]);
+            return response(['result' => $exception->getMessage()]);
         }
     }
 
