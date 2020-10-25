@@ -36,11 +36,14 @@ class PaymentController extends Controller
         try {
             $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
+            $orderData = $request->input('order');
+            $selectedPaymentOption = json_decode($orderData,true);
             $totalAmount = 0;
             foreach ($cartItems as $cartItem) {
                 $order = new Order();
                 $order->order_date = Carbon::now()->toDateString();
                 $order->product_id = $cartItem['productId'];
+                $order->payment_type = $selectedPaymentOption['paymentType'];
                 $order->user_id = $request->input('userId');
                 $order->quantity = $cartItem['productQuantity'];
                 $order->amount = $cartItem['productPrice'];
@@ -48,24 +51,25 @@ class PaymentController extends Controller
                 $order->save();
             }
 
-            \Stripe\Stripe::setApiKey('sk_test_51HTQxNLvujkiiWhM3qtdjSi9dlCopxS8gGY5HqRn3ZpP5xTeWG5pd8oms60Z4W0ysQm1QKaTDKDiKGi1vurQHYcF00vuYTv19J');
+            if ($selectedPaymentOption['paymentType']=='Card') {
+                \Stripe\Stripe::setApiKey('sk_test_51HTQxNLvujkiiWhM3qtdjSi9dlCopxS8gGY5HqRn3ZpP5xTeWG5pd8oms60Z4W0ysQm1QKaTDKDiKGi1vurQHYcF00vuYTv19J');
 
-            $token = \Stripe\Token::create([
-                'card' => [
-                    'number' => $request->input('cardNumber'),
-                    'exp_month' => $request->input('expiryMonth'),
-                    'exp_year' => $request->input('expiryYear'),
-                    'cvc' => $request->input('cvcNumber')
-                ]
-            ]);
+                $token = \Stripe\Token::create([
+                    'card' => [
+                        'number' => $request->input('cardNumber'),
+                        'exp_month' => $request->input('expiryMonth'),
+                        'exp_year' => $request->input('expiryYear'),
+                        'cvc' => $request->input('cvcNumber')
+                    ]
+                ]);
 
-            $charge = \Stripe\Charge::create([
-                'amount' => $totalAmount * 100,
-                'currency' => 'inr',
-                'source' => $token,
-                'receipt_email' => $request->input('email'),
-            ]);
-
+                $charge = \Stripe\Charge::create([
+                    'amount' => $totalAmount * 100,
+                    'currency' => 'inr',
+                    'source' => $token,
+                    'receipt_email' => $request->input('email'),
+                ]);
+            }
             return response(['result' => true]);
 
         } catch (\Exception $exception) {
